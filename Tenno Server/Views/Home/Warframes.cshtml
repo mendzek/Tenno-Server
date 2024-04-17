@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Warframes";
+    Warframes warframes = new Warframes();
+    warframes.SqlShowAllWarframes();
+}
+<a name="/Home/Warframes"></a>
+<header class="text-center">Warframes</header>
+<div>
+    @ViewData["warframesNum"]
+</div>
+<div>
+    @foreach (Warframes.Warframe w in warframes.warframesList)
+    {
+            <div>Name: @w.name</div>
+            <div>health point: @w.health</div>
+            <div>mana point: @w.mana</div>
+            <div>---------------------------</div>
+    }
+ </div>
+
